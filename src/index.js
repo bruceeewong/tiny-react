@@ -1,3 +1,7 @@
+// jsx would be compiled to TinyReact.createElement
+// so we definitly need to import here
+import TinyReact from "./TinyReact";
+
 // render these jsx onto the html page!
 const jsx = (
   <div className="container">
@@ -16,3 +20,6 @@ const jsx = (
     <input type="text" value="13" />
   </div>
 );
+
+// you should see a js object that represents the jsx as output
+console.log(jsx);

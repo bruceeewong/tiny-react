@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        // tell babel to compile jsx with our custom function
+        "pragma": "TinyReact.createElement"
+      }
+    ]
+  ]
+}
