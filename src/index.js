@@ -23,3 +23,6 @@ const jsx = (
 
 // you should see a js object that represents the jsx as output
 console.log(jsx);
+
+// render jsx onto the container dom
+TinyReact.render(jsx, document.getElementById("root"));
