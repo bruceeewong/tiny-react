@@ -6,9 +6,12 @@
  * @returns
  */
 export default function createElement(type, props, ...children) {
+  const childElements = [...children].filter(
+    (child) => typeof child !== "boolean" && child !== null
+  );
   return {
     type,
     props,
-    children,
+    children: childElements,
   };
 }
