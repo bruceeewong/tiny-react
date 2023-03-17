@@ -6,9 +6,15 @@
  * @returns
  */
 export default function createElement(type, props, ...children) {
-  const childElements = [...children].filter(
-    (child) => typeof child !== "boolean" && child !== null
-  );
+  const childElements = [...children]
+    .filter((child) => typeof child !== "boolean" && child !== null)
+    .map((child) => {
+      if (child instanceof Object) {
+        return child;
+      } else {
+        return createElement("text", { textContent: child });
+      }
+    });
   return {
     type,
     props,
