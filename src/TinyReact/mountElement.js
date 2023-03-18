@@ -1,9 +1,13 @@
+import isFunction from "./isFunction";
 import mountNativeElement from "./mountNativeElement";
+import mountComponent from "./mountComponent";
 
 export default function mountElement(virtualDOM, container) {
-  // if the type of virtual dom is native dom element
-  if (!typeof virtualDOM !== "function") {
+  if (isFunction(virtualDOM)) {
+    // Component
+    mountComponent(virtualDOM, container);
+  } else {
+    // Native Element
     mountNativeElement(virtualDOM, container);
   }
-  // TODO: else, render as component type
 }

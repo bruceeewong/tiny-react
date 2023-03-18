@@ -22,7 +22,22 @@ const jsx = (
 );
 
 // you should see a js object that represents the jsx as output
-console.log(jsx);
+// console.log(jsx);
 
 // render jsx onto the container dom
-TinyReact.render(jsx, document.getElementById("root"));
+// TinyReact.render(jsx, document.getElementById("root"));
+
+function Hello() {
+  return <span>Hello</span>;
+}
+
+// render function component
+function Heart() {
+  return (
+    <div>
+      <Hello /> &hearts;
+    </div>
+  );
+}
+
+TinyReact.render(<Heart />, document.getElementById("root"));
