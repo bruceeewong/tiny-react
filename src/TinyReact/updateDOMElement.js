@@ -6,6 +6,8 @@ export default function updateDOMElement(domElement, virtualDOM) {
     if (prop === "children") return;
     if (prop === "className") {
       domElement.setAttribute("class", value);
+    } else if (prop === "value" || prop === "checked") {
+      domElement[prop] = value;
     } else if (prop.startsWith("on")) {
       // bind an event listener
       const eventName = prop.toLowerCase().slice(2);
