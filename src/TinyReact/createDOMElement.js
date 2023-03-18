@@ -1,4 +1,5 @@
 import mountElement from "./mountElement";
+import updateDOMElement from "./updateDOMElement";
 
 export default function createDOMElement(virtualDOM) {
   let domElement;
@@ -7,6 +8,8 @@ export default function createDOMElement(virtualDOM) {
     domElement = document.createTextNode(virtualDOM.props.textContent);
   } else {
     domElement = document.createElement(virtualDOM.type);
+    // add attrs / event listeners / class to the dom element
+    updateDOMElement(domElement, virtualDOM);
   }
 
   // append child elements recursively
