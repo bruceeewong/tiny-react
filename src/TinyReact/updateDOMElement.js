@@ -12,6 +12,8 @@ export default function updateDOMElement(domElement, virtualDOM) {
       // bind an event listener
       const eventName = prop.toLowerCase().slice(2);
       domElement.addEventListener(eventName, value);
+    } else {
+      domElement.setAttribute(prop, value);
     }
   });
 }
