@@ -27,17 +27,35 @@ const jsx = (
 // render jsx onto the container dom
 // TinyReact.render(jsx, document.getElementById("root"));
 
-function Hello(props) {
-  return <span>Hello {props.title}</span>;
+// function Hello(props) {
+//   return <span>Hello {props.title}</span>;
+// }
+
+// // render function component
+// function Heart(props) {
+//   return (
+//     <div>
+//       <Hello title={props.title} /> &hearts;
+//     </div>
+//   );
+// }
+
+// TinyReact.render(<Heart title="World" />, document.getElementById("root"));
+
+// render class component
+
+class Alert extends TinyReact.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        Alert:
+        {this.props.title}
+      </div>
+    );
+  }
 }
 
-// render function component
-function Heart(props) {
-  return (
-    <div>
-      <Hello title={props.title} /> &hearts;
-    </div>
-  );
-}
-
-TinyReact.render(<Heart title="World" />, document.getElementById("root"));
+TinyReact.render(<Alert title="Fire" />, document.getElementById("root"));
