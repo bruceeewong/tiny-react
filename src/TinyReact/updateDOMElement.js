@@ -5,6 +5,10 @@ export default function updateDOMElement(domElement, virtualDOM) {
     const value = props[prop];
     if (prop === "className") {
       domElement.setAttribute("class", value);
+    } else if (prop.startsWith("on")) {
+      // bind an event listener
+      const eventName = prop.toLowerCase().slice(2);
+      domElement.addEventListener(eventName, value);
     }
   });
 }
