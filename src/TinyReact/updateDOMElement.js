@@ -3,6 +3,7 @@ export default function updateDOMElement(domElement, virtualDOM) {
 
   Object.keys(props).forEach((prop) => {
     const value = props[prop];
+    if (prop === "children") return;
     if (prop === "className") {
       domElement.setAttribute("class", value);
     } else if (prop.startsWith("on")) {
